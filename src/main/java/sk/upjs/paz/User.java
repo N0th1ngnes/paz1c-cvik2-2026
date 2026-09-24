@@ -7,9 +7,8 @@ public record User(
         String name,
         String Surname,
         Gender gender,
-        String title,
-        LocalDate birthDate,
-        Role role
+        Role title,
+        LocalDate birthDate
 ) {
     public enum Gender {
         UNKNOWN,

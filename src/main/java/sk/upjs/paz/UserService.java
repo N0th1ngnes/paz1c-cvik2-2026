@@ -15,19 +15,20 @@ public class UserService {
         double unknown = 0;
 
         for (User user : database) {
+            System.out.println(user.name());
             switch (user.gender()) {
                 case MALE:
-                    ++boys;
+                    boys++;
                 case FEMALE:
-                    ++girls;
+                    girls++;
                 case UNKNOWN:
-                    ++unknown;
+                    unknown++;
             }
         }
 
-        double total = boys+girls+unknown;
-
-        return new GenderRatio((total/100.0*boys), (total/100.0*girls), (total/100.0*unknown));
+        double total = (boys+girls+unknown);
+        System.out.println(girls + " " + boys + " " + unknown + " " + total);
+        return new GenderRatio((boys*100.0/total), (girls*100.0/total), (unknown*100.0/total));
 
     }
 }
